@@ -79,7 +79,7 @@ typedef NS_ENUM(NSUInteger, MTROptionalQRCodeInfoType) {
 /**
  * Generate a random Matter-valid setup passcode.
  */
-+ (NSNumber *)generateRandomSetupPasscode API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2));
++ (NSNumber *)generateRandomSetupPasscode;
 
 /**
  * Create an MTRSetupPayload with the given onboarding payload.
@@ -87,15 +87,13 @@ typedef NS_ENUM(NSUInteger, MTROptionalQRCodeInfoType) {
  * Will return nil on errors (e.g. if the onboarding payload cannot be parsed).
  */
 + (MTRSetupPayload * _Nullable)setupPayloadWithOnboardingPayload:(NSString *)onboardingPayload
-                                                           error:(NSError * __autoreleasing *)error
-    API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2));
+                                                           error:(NSError * __autoreleasing *)error;
 
 /**
  * Initialize an MTRSetupPayload with the given passcode and discriminator.
  * This will pre-set version, product id, and vendor id to 0.
  */
-- (instancetype)initWithSetupPasscode:(NSNumber *)setupPasscode
-                        discriminator:(NSNumber *)discriminator API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2));
+- (instancetype)initWithSetupPasscode:(NSNumber *)setupPasscode discriminator:(NSNumber *)discriminator;
 
 /** Get 11 digit manual entry code from the setup payload. */
 - (nullable NSString *)manualEntryCode;
@@ -106,8 +104,7 @@ typedef NS_ENUM(NSUInteger, MTROptionalQRCodeInfoType) {
  * Returns nil on failure (e.g. if the setup payload does not have all the
  * information a QR code needs).
  */
-- (NSString * _Nullable)qrCodeString:(NSError * __autoreleasing *)error
-    API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2));
+- (NSString * _Nullable)qrCodeString:(NSError * __autoreleasing *)error;
 
 @end
 

@@ -37,7 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (id)copyWithZone:(nullable NSZone *)zone;
 @end
 
-API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2))
 @interface MTRDescriptorClusterDeviceTypeStruct : NSObject <NSCopying>
 @property (nonatomic, copy) NSNumber * _Nonnull type;
 @property (nonatomic, copy) NSNumber * _Nonnull revision;
@@ -46,12 +45,7 @@ API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2))
 - (id)copyWithZone:(nullable NSZone *)zone;
 @end
 
-@interface MTRDescriptorClusterDeviceType : NSObject <NSCopying>
-@property (nonatomic, copy) NSNumber * _Nonnull type;
-@property (nonatomic, copy) NSNumber * _Nonnull revision;
-
-- (instancetype)init;
-- (id)copyWithZone:(nullable NSZone *)zone;
+@interface MTRDescriptorClusterDeviceType : MTRDescriptorClusterDeviceTypeStruct <NSCopying>
 @end
 
 @interface MTRBindingClusterTargetStruct : NSObject <NSCopying>

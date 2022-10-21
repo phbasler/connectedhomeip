@@ -92,7 +92,6 @@ typedef void (^MTRDeviceResubscriptionScheduledHandler)(NSError * error, NSNumbe
 /**
  * Handler for openCommissioningWindowWithSetupPasscode.
  */
-API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2))
 typedef void (^MTRDeviceOpenCommissioningWindowHandler)(MTRSetupPayload * _Nullable payload, NSError * _Nullable error);
 
 extern NSString * const MTRAttributePathKey;
@@ -264,8 +263,7 @@ extern NSString * const MTRArrayValueType;
                                    discriminator:(NSNumber *)discriminator
                                         duration:(NSNumber *)duration
                                            queue:(dispatch_queue_t)queue
-                                      completion:(MTRDeviceOpenCommissioningWindowHandler)completion
-    API_AVAILABLE(ios(16.2), macos(13.1), watchos(9.2), tvos(16.2));
+                                      completion:(MTRDeviceOpenCommissioningWindowHandler)completion;
 
 @end
 
